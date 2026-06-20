@@ -46,7 +46,7 @@
       ci += deleting ? -1 : 1;
       if (ci < 0) ci = 0;
       if (ci > full.length) ci = full.length;
-      heroType.innerHTML = "$ " + full.slice(0, ci) + cur;
+      requestAnimationFrame(function () { heroType.innerHTML = "$ " + full.slice(0, ci) + cur; });
       var delay = deleting ? 38 : 70;
       if (!deleting && ci === full.length) { delay = 1900; deleting = true; }
       else if (deleting && ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; delay = 320; }
